@@ -70,6 +70,7 @@ main {
 
 .form button {
     font-family: Inter;
+    cursor: pointer;
     padding: 10px;
     border-radius: 5px;
     border:none;
