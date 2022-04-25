@@ -1,0 +1,42 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Inter, sans-serif
+}
+
+nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    
+    padding: 20px;
+    background: linear-gradient(90deg, #672280 1.18%, #A626D3 100%);
+    color:white;
+}
+
+.nav-logo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: 15px;
+}
+
+.nav-logo h1 {
+    font-weight: 500;
+    letter-spacing: -1px;
+}
+
+.nav-logo img {
+    width: 50px;
+    margin-right: 8px;
+}
+
+nav h2 {
+    font-size: 15px;
+    font-weight: 400;
+}
