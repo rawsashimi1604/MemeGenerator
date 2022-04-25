@@ -6,7 +6,10 @@ export default function App() {
     return (
         <div className="container">
             <Navbar/>
-            <Form/>
+            <main>
+                <Form/>
+            </main>
+            
         </div>
         
     )

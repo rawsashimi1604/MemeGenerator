@@ -40,3 +40,43 @@ nav h2 {
     font-size: 15px;
     font-weight: 400;
 }
+
+main {
+    margin: 30px;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-inputs {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 15px;
+
+}
+
+.form-inputs input {
+    font-family: Inter;
+    min-width: 48%;
+    padding: 10px;
+    text-indent: 5px;
+    border-radius: 5px;
+    border: 1px solid #D5D4D8;
+    color: black;
+}
+
+.form button {
+    font-family: Inter;
+    padding: 10px;
+    border-radius: 5px;
+    border:none;
+
+    background: linear-gradient(90.41deg, #711F8D 1.14%, #A818DA 100%);
+    color: white;
+
+    font-size: 15px;
+    font-weight: 500;
+}
