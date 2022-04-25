@@ -1,15 +1,19 @@
 import React from "react";
 import memeData from "../memeData"
 
-function getRandomMemeData() {
-    let arrLen = memeData.data.memes.length;
-    let rand = Math.floor(Math.random() * arrLen);
 
-    return memeData.data.memes[rand].url;
-}
 
 export default function Form() {
     
+    const [memeState, setMemeState] = React.useState("")
+
+    function getRandomMemeData() {
+        let arrLen = memeData.data.memes.length;
+        let rand = Math.floor(Math.random() * arrLen);
+    
+        setMemeState(memeData.data.memes[rand].url);
+    }
+
     return (
         <div className="form">
             <div className="form-inputs">
@@ -21,12 +25,12 @@ export default function Form() {
                 ></input>
             </div>
             
-            <button>Get a new meme image 🖼</button>
+            <button
+                onClick={getRandomMemeData}
+            >Get a new meme image 🖼</button>
 
             <section className="meme">
-                <span className="meme-url">
-                    
-                </span>
+                <img src={memeState}></img>
             </section>
         </div>
     )
