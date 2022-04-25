@@ -1,12 +1,13 @@
 import React from "react";
 import Navbar from "./components/Navbar";
+import Form from "./components/Form"
 
 export default function App() {
     return (
-        <main>
+        <div className="container">
             <Navbar/>
-            <h1>This is my app</h1>
-        </main>
+            <Form/>
+        </div>
         
     )
 }
