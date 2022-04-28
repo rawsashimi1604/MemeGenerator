@@ -5,33 +5,55 @@ import memeData from "../memeData"
 
 export default function Form() {
     
-    const [memeState, setMemeState] = React.useState("")
+    // https://i.imgflip.com/c2qn.jpg
+
+    // All Memes
+    const [allMemeImages, setAllMemeImages] = React.useState(memeData);
+
+
+    // Current meme
+    const [memeState, setMemeState] = React.useState({
+        topText: "",
+        bottomText: "",
+        randomImage: "https://i.imgflip.com/c2qn.jpg",
+    })
+
 
     function getRandomMemeData() {
-        let arrLen = memeData.data.memes.length;
+        let arrLen = allMemeImages.data.memes.length;
         let rand = Math.floor(Math.random() * arrLen);
     
-        setMemeState(memeData.data.memes[rand].url);
+        setMemeState(prevMeme => {
+            return {
+                ...prevMeme,
+                randomImage: allMemeImages.data.memes[rand].url
+            }
+        });
     }
 
     return (
-        <div className="form">
-            <div className="form-inputs">
-                <input
-                    placeholder="top input"
-                ></input>
-                <input
-                    placeholder="bottom input"
-                ></input>
-            </div>
-            
-            <button
-                onClick={getRandomMemeData}
-            >Get a new meme image 🖼</button>
-
+        <main>
+            <form className="form">
+                <div className="form-inputs">
+                    <input
+                        placeholder="top input"
+                    ></input>
+                    <input
+                        placeholder="bottom input"
+                    ></input>
+                </div>
+                
+                <button
+                    onClick={getRandomMemeData}
+                >Get a new meme image 🖼</button>
+            </form>
             <section className="meme">
-                <img src={memeState}></img>
+                <img src={memeState.randomImage}></img>
+                <h2 className="meme-text top">One does not simply</h2>
+                <h2 className="meme-text bottom">Walk into Mordor</h2>
             </section>
-        </div>
+        </main>
+        
+
     )
 }
